@@ -6,6 +6,6 @@
 4, 模板编译 D
 https://www.npmjs.com/package/fis-parser-velocity
 
-5，模板数据伪造？
+5，模板数据
 6，静态资源合并 --- 打包的关系？
-7，模块化的用处？如何体现fis3模块化过的痕迹？
+7，页面模块化 D --数据处理待解决
