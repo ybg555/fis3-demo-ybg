@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>index</title>
+
+
+    <link rel="stylesheet" type="text/css" href="/static/css/base_c435872.css" />
+    <style>@charset "UTF-8";
+.test-ul {
+  background: url(/static/images/test_1a05ce1.png) no-repeat; }
+
+.test-ul li {
+  padding: 10px; }
+
+.test-ul li {
+  min-height: 30px; }
+
+/* 导入 */
+/*@import 'reset';*/
+/* 变量,一般用于属性值、值后面加上!default、特殊变量，可以到处用，key、value都可以用*/
+.test-a {
+  font-family: '微软雅黑'; }
+
+/* 一维数据 ，多值变量 nth($var,$index)*/
+/*二维数据，相当于js中的二维数组*/
+/*$px: 5px 10px, 20px 30px;*/
+/* 嵌套 */
+.test-b ul {
+  width: 200px; }
+.test-b li {
+  display: inline-block; }
+.test-b a {
+  color: red; }
+
+/* 属性嵌套 */
+.fakeshadow {
+  border-style: solid;
+  border-left-width: 4px;
+  border-left-color: #888;
+  border-right-width: 2px;
+  border-right-color: #ccc; }
+
+/* 多个选择器跳出 @at-root*/
+.parent-3 {
+  background: #f00;
+  @at-root {
+    .child1 {
+      width: 300px; }
+
+    .child2 {
+      width: 400px; } }
+ }
+
+/* mixin 代码片段 可以传参 */
+.box-border {
+  border: 1px solid #ccc;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+/* 继承 */
+.message, .success, .error, .warning {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #333; }
+
+.success {
+  border-color: green; }
+
+.error {
+  border-color: red; }
+
+.warning {
+  border-color: yellow; }
+
+/* 编译结果
+.message, .success, .error, .warning {
+  border: 1px solid #cccccc;
+  padding: 10px;
+  color: #333;
+}
+ */
+/* 条件判断
+p {
+  @if $type == ocean {
+    color: blue;
+  } @else if $type == matador {
+    color: red;
+  } @else if $type == monster {
+    color: green;
+  } @else {
+    color: black;
+  }
+}
+*/
+/* 三元表达式 
+if(true, 1px, 2px) => 1px
+if(false, 1px, 2px) => 2px
+*/</style>
+    <link rel="stylesheet" type="text/css" href="/widget/leftmenu/leftmenu.css" />
+    <link rel="stylesheet" type="text/css" href="/widget/rightmenu/rightmenu.css" />
+</head>
+<body>
+	<ul class="test-ul" id="J_ul">
+		<li><a href="">1i</a></li>
+		<li><a href="">2i</a></li>
+		<li><a href="">3i</a></li>
+		<li id="J_btn"><a href="javascript:void(0)">4i12333333333333333333333</a></li>
+	</ul>
+	<div>
+		<img title="百度logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEEAAABkCAYAAADZll3AAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAgRJREFUeNrsnD1KA0EYhr/EgI2gp7CPqUQbC1t/4gEkoBcQBKtIGhELwRO4F/CvErSNsTFqq1hEUgcULBSUOJPs6GZZ4wHe54WPSaabh5nZ2X3YzbXLZVPJZbPpmw1X+6Gv0mpZ3vRSdVVLdihCCCCq6hAsng1b/kfB1aerEYVRz5dK6S4PYdfPhDVXX8IzorccInUQYU+QBpHcGGVBpK8OkiAKGX1R3B6qzoQkiIo6BCkQ/50Yn1y9KUOYdXXuakwVwrQKgL8geAAXKgCyIMgBSEOQBJCEILUHZEEIAMaV7yKlAfjkut2uqSdvBAhACM8TFq8eZQZbb1z75sXVgatt/6ezuYp8UV8OP/Ilt1B/kJEvGXk9m5mcQL4Y8mVgT5AGgXwx5Ev/sJTRF8Ut8sWQL1ogkC+GfBkKAfliyBfkC/LFkC/IF+SLenjkDgQgACGZwsfJlMxgG/fPvhl4B2qu1uEdKOXlgIaL86vh3o+L0hpudPkWDReWQ2RouF6kQaDhDA3XPzFm9EVxi4YzNJwWCDScoeGGQkDDGRoODYeGMzQcGg4Npx68g7+L3LnZkxns0d2pbwa8Q3O9gXdQXg54hzia315bKS6lu/j2WnI5RIZ36EUaBN7B8A4Wrg6WAcIH72B4By0QeAfDOwyFgHcwvAPeAe9geAe8A95BPXgHl28BBgDampzJH7gQVgAAAABJRU5ErkJggg==">
+	</div>
+	<div class="leftmenu">
+		leftmenu
+<div>
+	<div>1</div>
+	<div>2</div>
+	<div>3</div>
+</div>
+	</div>
+	<p>
+		---我是华丽丽的分割线---
+	</p>
+	<div class="leftmenu">
+		rightMenu
+<div>
+	<div>1</div>
+	<div>2</div>
+	<div>3</div>
+</div>
+	</div>
+	<!-- <link rel="import" href="footer.html?__inline"> -->
+<script type="text/javascript" src="/static/js/require_1aa6b58.js"></script>
+<script type="text/javascript">/*resourcemap*/
+require.config({paths:{
+  "static/js/mod/index.index.mod.a": "/static/js/index.index.mod.a_a763e2e"
+}});</script>
+<script type="text/javascript" src="/static/js/index.index.main_4c2b77b.js"></script>
+<script type="text/javascript" src="/static/js/packTo/leftmenu_f0b09e1.js"></script>
+<script type="text/javascript" src="/static/js/packTo/rightmenu_d69244e.js"></script>
+<script type="text/javascript" src="/static/js/jquery_f6afe61.js"></script>
+<script type="text/javascript">$(function(){var e=(document.getElementById("J_ul"),document.createDocumentFragment());console.log(typeof e)});
+var AAA=function(){this.name="blade",this.age=18,this.sayName=function(){console.log(this.name)}};
+require([""]);</script>
+</body>
+</html>

@@ -15,12 +15,25 @@
 	</div>
 	<div class="leftmenu">
 		leftmenu
-		<link rel="import" href="/widget/leftmenu/leftmenu.html?__inline">
+		<link rel="import" href="widget/leftmenu/leftmenu.html?__inline">
 	</div>
 	<p>
 		---我是华丽丽的分割线---
 	</p>
+	<div class="leftmenu">
+		rightMenu
+		<link rel="import" href="widget/rightmenu/rightmenu.html?__inline">
+	</div>
 	<!-- <link rel="import" href="footer.html?__inline"> -->
 	#parse("footer.html")
+	<script type="text/javascript">
+	var AAA = function(){
+		this.name = 'blade';
+		this.age = 18;
+		this.sayName = function(){
+			console.log(this.name);
+		};
+	}
+	</script>
 </body>
 </html>

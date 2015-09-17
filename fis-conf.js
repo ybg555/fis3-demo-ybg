@@ -1,8 +1,3 @@
-/*
- * @desc 所有文件发布到...
- * @param $0 保持以前的状态
- * @notice fis3 release -d 自定义path采用自定义路径时，注释此代码
- */
 // fis.match('*', {
 //     release: './static/$0'
 // });
@@ -29,6 +24,10 @@
 //     release: '$0'
 // });
 
+
+var root = fis.project.getProjectPath();
+var path = require('path');
+
 // SCSS编译optimizer: fis.plugin('clean-css')
 fis.match('*.scss', {
   rExt: '.css', // from .scss to .css
@@ -43,7 +42,7 @@ fis.match('::package', { //用来匹配 fis 的打包过程
 })
 
 // 对 CSS 进行图片合并
-fis.match('*.css', {
+.match('*.css', {
   // 给匹配到的文件分配属性 `useSprite`
   useSprite: true
 });
@@ -68,21 +67,44 @@ fis.match('*.css', {
   optimizer: fis.plugin('clean-css')
 });
 
-fis.match('*.js', {
-  // fis-optimizer-uglify-js 插件进行压缩，已内置
+/*
+模板内嵌js处理
+ */
+fis.match('*.html:js', {
   optimizer: fis.plugin('uglify-js')
+});
+
+/*
+匹配()实现分组信息
+ */
+fis.match('(*.js)', {
+  // fis-optimizer-uglify-js 插件进行压缩，已内置
+  optimizer: fis.plugin('uglify-js'),
+  release: '/static/js/$1'
 })
 
+/*
+打包
+ */
+fis.match('/widget/(*)/*.js', {
+  packTo: '/static/js/packTo/$1.js'
+}, 100);
+fis.match('/static/js/packTo/*.js', {
+  release: '$0'
+}, 100);
+
 //编译模板
-.match(/\.html/, {
-  rExt : '.html',
+fis.match(/\.html/, {
+  rExt: '.html',
   loaderLang: 'html',
   parser: fis.plugin('velocity', {
     loadJs: true,
-    // loader: 'requirejs',
-    loadSync: true
+    loader: 'requirejs',
+    parse: true,
+    loadSync: true,
+    root: [root]
   })
-}, 100);
+});
 
 // npm install [-g] fis3-hook-module
 fis.hook('module', {
@@ -102,6 +124,15 @@ fis.match('::package', {
     useInlineMap: true // 资源映射表内嵌
   })
 });
+
+// console.log(process.argv);
+
+
+fis.media('prod')
+  .match(/\.mock/, {
+    release: false
+  });
+
 
 //解释tpl模版
 // .match(/\.tpl/, {

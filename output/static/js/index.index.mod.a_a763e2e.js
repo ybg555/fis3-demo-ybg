@@ -1,0 +1,1 @@
+define("static/js/mod/index.index.mod.a",["require","exports","module"],function(n,e){e.add=function(n,e){return n+e},e.div=function(n,e){return n/e},e.mul=function(n,e){return n*e},e.min=function(n,e){return n-e}});

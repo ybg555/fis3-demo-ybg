@@ -1,4 +1,4 @@
 function leftmenu_a(){
-	console.log('leftmenu-------a');
+	console.log('rightmenu-------a');
 }
 leftmenu_a();

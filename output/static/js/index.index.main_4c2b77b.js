@@ -1,0 +1,1 @@
+require.config({baseUrl:"static/js/mod/"}),require(["static/js/mod/index.index.mod.a"],function(n){console.log("in"),document.getElementById("J_btn").onclick=function(){alert(n.min(5,7))}});
